@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tryfooddeliveryapp/screens/home_screen.dart';
+import 'package:tryfooddeliveryapp/screens/home/views/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +17,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.grey[50]
         ),
-        home: const HomeScreen());
+        home:  HomeScreen());
   }
 }

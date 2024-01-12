@@ -1,13 +1,13 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:tryfooddeliveryapp/screens/home/components/search_bar_component.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatelessWidget {
+   HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
+  TextEditingController textEditingController = TextEditingController();
 
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,22 +27,29 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         actions: [
           Padding(
-            padding: const EdgeInsets.only(top: 10.0,right: 15.0),
+            padding: const EdgeInsets.only(top: 10.0, right: 15.0),
             child: Badge(
               alignment: Alignment.topRight,
               label: const Text("5"),
-              child:IconButton(
-              onPressed: (){},
-              icon:const Icon(
-                Icons.shopping_cart,
-                size: 28.0,
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.shopping_cart,
+                  size: 28.0,
                 ),
-            ) ,
+              ),
             ),
           ),
-          
+        ],
+      ),
+      body: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 20.0),
+        children: const[
+           CustomSearchBar(),
         ],
       ),
     );
   }
+
+
 }
