@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:tryfooddeliveryapp/screens/home/widgets/nearby_restaurants.dart';
 import 'package:tryfooddeliveryapp/screens/home/widgets/recent_orders.dart';
 import 'package:tryfooddeliveryapp/screens/home/widgets/search_bar_component.dart';
 
@@ -47,6 +48,7 @@ class HomeScreen extends StatelessWidget {
         children: const[
            CustomSearchBar(),
            RecentOrder(),
+           NearByRestaurant()
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tryfooddeliveryapp/screens/home/components/header_component.dart';
 import 'package:tryfooddeliveryapp/screens/home/components/order_component.dart';
 
 class RecentOrder extends StatelessWidget {
@@ -45,14 +46,9 @@ class RecentOrder extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            "Recent Orders",
-            style: TextStyle(
-                fontSize: 24.0,
-                letterSpacing: 1.0,
-                fontWeight: FontWeight.w600),
-          ),
-          Container(
+          const HeaderComponent(header: "Recent Orders"),
+          
+          SizedBox(
             height: 120.0,
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
