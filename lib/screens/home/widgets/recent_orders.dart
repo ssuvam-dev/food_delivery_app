@@ -55,6 +55,7 @@ class RecentOrder extends StatelessWidget {
           Container(
             height: 120.0,
             child: ListView.builder(
+              physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return OrderComponent(order: orders[index]);
