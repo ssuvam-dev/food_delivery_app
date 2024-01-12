@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:tryfooddeliveryapp/screens/home/widgets/recent_orders.dart';
@@ -7,7 +6,7 @@ import 'package:tryfooddeliveryapp/screens/home/widgets/search_bar_component.dar
 class HomeScreen extends StatelessWidget {
    HomeScreen({super.key});
 
-  TextEditingController textEditingController = TextEditingController();
+  final TextEditingController textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

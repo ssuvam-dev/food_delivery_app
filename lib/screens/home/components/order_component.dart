@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class OrderComponent extends StatefulWidget {
-  Map<String,dynamic> order;
-  OrderComponent({super.key, required this.order});
+  final Map<String,dynamic> order;
+  const OrderComponent({super.key, required this.order});
 
   @override
   State<OrderComponent> createState() => _OrderComponentState();
