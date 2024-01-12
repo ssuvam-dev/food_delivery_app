@@ -1,7 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:tryfooddeliveryapp/screens/home/components/search_bar_component.dart';
+import 'package:tryfooddeliveryapp/screens/home/widgets/recent_orders.dart';
+import 'package:tryfooddeliveryapp/screens/home/widgets/search_bar_component.dart';
 
 class HomeScreen extends StatelessWidget {
    HomeScreen({super.key});
@@ -46,6 +47,7 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 20.0),
         children: const[
            CustomSearchBar(),
+           RecentOrder(),
         ],
       ),
     );
