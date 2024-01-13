@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tryfooddeliveryapp/screens/home/widgets/nearby_restaurants.dart';
 import 'package:tryfooddeliveryapp/screens/home/widgets/recent_orders.dart';
 import 'package:tryfooddeliveryapp/screens/home/widgets/search_bar_component.dart';
+import 'package:tryfooddeliveryapp/utils/theme_colors.dart';
 
 class HomeScreen extends StatelessWidget {
    HomeScreen({super.key});
@@ -13,7 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepOrangeAccent,
+        backgroundColor: primaryColor,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: IconButton(

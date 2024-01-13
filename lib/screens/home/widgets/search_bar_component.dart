@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tryfooddeliveryapp/utils/theme_colors.dart';
 
 class CustomSearchBar extends StatefulWidget {
   const CustomSearchBar({super.key});
@@ -43,7 +44,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
             RoundedRectangleBorder(
               side: BorderSide(
                 width: 0.8,
-                color: Colors.deepOrangeAccent
+                color: primaryColor
               ),
               borderRadius: BorderRadius.all(Radius.circular(30.0)),
               ),
