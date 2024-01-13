@@ -117,7 +117,7 @@ class CartComponent extends StatelessWidget {
             ),
           ),
           Text(
-            "Rs. ${order.food.price.toString()}",
+            "Rs. ${order.food.price * order.quantity}",
             style: const TextStyle(
               fontWeight: FontWeight.bold,
             ),

@@ -18,8 +18,7 @@ class Cart extends StatelessWidget {
         ),
 
         body: Obx((){
-        return
-        ListView.separated(
+        return ListView.separated(
           physics:const ClampingScrollPhysics(),
           padding: const EdgeInsets.only(top: 10.0,left: 10.0),
           itemBuilder:(context, index) {

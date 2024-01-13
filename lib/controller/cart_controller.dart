@@ -24,12 +24,18 @@ class CartController extends GetxController {
   void increaseOrder(Order order) {
     order.quantity += 1;
     cartItems += 1;
+    orders.refresh();
     update();
   }
 
   void decreaseOrder(Order order) {
     order.quantity -= 1;
+    if(order.quantity <1)
+    {
+      orders.remove(order);
+    }
     cartItems -= 1;
+    orders.refresh();
     update();
   }
 }
