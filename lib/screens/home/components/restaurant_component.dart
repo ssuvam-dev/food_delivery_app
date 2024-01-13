@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tryfooddeliveryapp/models/restaurant.dart';
 import 'package:tryfooddeliveryapp/screens/home/components/rating_component.dart';
 
 class RestaurantComponent extends StatelessWidget {
-  final Map<String,dynamic> restaurant;
+  final Restaurant restaurant;
   const RestaurantComponent({super.key,required this.restaurant});
 
   @override
@@ -16,8 +17,8 @@ class RestaurantComponent extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(15.0),
-            child: const Image(
-              image: AssetImage("assets/images/res.png"),
+            child:  Image(
+              image: AssetImage(restaurant.image),
               height: 150,
               width: 150,
               fit: BoxFit.cover,
@@ -30,9 +31,9 @@ class RestaurantComponent extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              SizedBox(height: 10.0,),
+              const SizedBox(height: 10.0,),
                 Text(
-                  restaurant['name'],
+                  restaurant.name,
                   style: const TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
@@ -43,13 +44,13 @@ class RestaurantComponent extends StatelessWidget {
                   height: 5.0,
                 ),
                 
-                  CustomRatingComponent(rating: restaurant['rating']),
+                  CustomRatingComponent(rating: restaurant.rating),
                  
                 const SizedBox(
                   height: 5.0,
                 ),
                  Text(
-                  restaurant['address'],
+                  restaurant.address,
                   style: const TextStyle(
                       fontSize: 16.0,
                       ),
@@ -60,7 +61,7 @@ class RestaurantComponent extends StatelessWidget {
                   height: 5.0,
                 ),
                  Text(
-                  restaurant['location'],
+                  restaurant.location,
                   style: const TextStyle(
                       fontSize: 16.0,
                       ),
