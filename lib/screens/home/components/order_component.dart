@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tryfooddeliveryapp/utils/theme_colors.dart';
 
 class OrderComponent extends StatefulWidget {
   final Map<String,dynamic> order;
@@ -70,7 +71,7 @@ class _OrderComponentState extends State<OrderComponent> {
           Container(
             margin: const EdgeInsets.only(right: 10.0),
             decoration: BoxDecoration(
-                color: Colors.deepOrangeAccent,
+                color: primaryColor,
                 borderRadius: BorderRadius.circular(30.0)),
             child: IconButton(
                 onPressed: () {},

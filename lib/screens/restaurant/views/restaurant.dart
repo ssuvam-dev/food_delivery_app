@@ -3,6 +3,7 @@ import 'package:tryfooddeliveryapp/models/restaurant.dart';
 import 'package:tryfooddeliveryapp/screens/home/components/rating_component.dart';
 import 'package:tryfooddeliveryapp/screens/restaurant/components/buttonWidget.dart';
 import 'package:tryfooddeliveryapp/screens/restaurant/components/imageWidget.dart';
+import 'package:tryfooddeliveryapp/screens/restaurant/components/menugridview.dart';
 import 'package:tryfooddeliveryapp/screens/restaurant/components/name_and_location.dart';
 import 'package:tryfooddeliveryapp/screens/restaurant/components/ratingandaddress.dart';
 import 'package:tryfooddeliveryapp/utils/theme_colors.dart';
@@ -38,6 +39,20 @@ class RestaurantScreen extends StatelessWidget {
           NameAndLocationWidget(restaurant: restaurant),
           RatingAndAddress(restaurant: restaurant),
           const ButtonWidget(),
+          const SizedBox(height: 10.0,),
+          const Center(
+            child: Text(
+              "Menu",
+              style: TextStyle(
+                fontSize: 20.0,
+                letterSpacing: 1,
+                fontWeight: FontWeight.bold
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+
+          const MenuGridView(),
         ],
       ),
     );
