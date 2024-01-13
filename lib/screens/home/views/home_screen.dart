@@ -1,15 +1,17 @@
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tryfooddeliveryapp/controller/cart_controller.dart';
+import 'package:tryfooddeliveryapp/screens/cart/views/cart.dart';
 import 'package:tryfooddeliveryapp/screens/home/widgets/nearby_restaurants.dart';
 import 'package:tryfooddeliveryapp/screens/home/widgets/recent_orders.dart';
 import 'package:tryfooddeliveryapp/screens/home/widgets/search_bar_component.dart';
 import 'package:tryfooddeliveryapp/utils/theme_colors.dart';
 
 class HomeScreen extends StatelessWidget {
-   HomeScreen({super.key});
+  HomeScreen({super.key});
 
   final TextEditingController textEditingController = TextEditingController();
-
+  final CartController cartController = Get.put(CartController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +34,13 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.only(top: 10.0, right: 15.0),
             child: Badge(
               alignment: Alignment.topRight,
-              label: const Text("5"),
+              label: Obx(() {
+                return Text(cartController.cartItems.value.toString());
+              }),
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(() => const Cart());
+                },
                 icon: const Icon(
                   Icons.shopping_cart,
                   size: 28.0,
@@ -45,15 +51,9 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 20.0),
-        children: const[
-           CustomSearchBar(),
-           RecentOrder(),
-           NearByRestaurant()
-        ],
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+        children: const [CustomSearchBar(), RecentOrder(), NearByRestaurant()],
       ),
     );
   }
-
-
 }

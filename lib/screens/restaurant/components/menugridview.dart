@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tryfooddeliveryapp/models/food.dart';
+import 'package:tryfooddeliveryapp/models/menu.dart';
 import 'package:tryfooddeliveryapp/screens/restaurant/components/singlemenu.dart';
 
 class MenuGridView extends StatelessWidget {

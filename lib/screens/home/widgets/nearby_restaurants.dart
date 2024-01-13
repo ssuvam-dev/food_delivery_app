@@ -15,11 +15,11 @@ class NearByRestaurant extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const HeaderComponent(header: "Nearby Restaurant"),
-          Container(
+          SizedBox(
             width: double.infinity,
             child: ListView.builder(
               shrinkWrap: true,
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 itemBuilder:(context, index){
                     return RestaurantComponent(restaurant: restaurants[index]);
                 },

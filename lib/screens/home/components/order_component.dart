@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tryfooddeliveryapp/controller/cart_controller.dart';
+import 'package:tryfooddeliveryapp/models/menu.dart';
+import 'package:tryfooddeliveryapp/screens/cart/components/cart_component.dart';
+import 'package:tryfooddeliveryapp/screens/cart/views/cart.dart';
 import 'package:tryfooddeliveryapp/utils/theme_colors.dart';
 
 class OrderComponent extends StatefulWidget {
-  final Map<String,dynamic> order;
-  const OrderComponent({super.key, required this.order});
+  final Menu menu;
+  const OrderComponent({super.key, required this.menu});
 
   @override
   State<OrderComponent> createState() => _OrderComponentState();
 }
 
 class _OrderComponentState extends State<OrderComponent> {
+  final CartController _cartController = Get.find<CartController>();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +31,7 @@ class _OrderComponentState extends State<OrderComponent> {
           ClipRRect(
             borderRadius: BorderRadius.circular(15.0),
             child:  Image(
-              image: AssetImage(widget.order['image']),
+              image: AssetImage(widget.menu.image),
               height: 100.0,
               width: 100.0,
               fit: BoxFit.cover,
@@ -38,7 +44,7 @@ class _OrderComponentState extends State<OrderComponent> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.order['name'],
+                  widget.menu.name,
                   style: const TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
@@ -49,7 +55,7 @@ class _OrderComponentState extends State<OrderComponent> {
                   height: 5.0,
                 ),
                  Text(
-                  widget.order['restaurant_name'],
+                  widget.menu.restaurant.name,
                   style: const TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w600),
@@ -58,13 +64,13 @@ class _OrderComponentState extends State<OrderComponent> {
                 const SizedBox(
                   height: 5.0,
                 ),
-                 Text(
-                  widget.order['date'],
-                  style: const TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w600),
-                  overflow: TextOverflow.ellipsis,
-                )
+                //  Text(
+                //   widget.order['date'],
+                //   style: const TextStyle(
+                //       fontSize: 16.0,
+                //       fontWeight: FontWeight.w600),
+                //   overflow: TextOverflow.ellipsis,
+                // )
               ],
             ),
           ),
@@ -74,7 +80,10 @@ class _OrderComponentState extends State<OrderComponent> {
                 color: primaryColor,
                 borderRadius: BorderRadius.circular(30.0)),
             child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  _cartController.addToCart(widget.menu, widget.menu.restaurant, 1);
+                  // Get.to(()=>const Cart());
+                },
                 icon: const Icon(
                   Icons.add,
                   size: 30.0,

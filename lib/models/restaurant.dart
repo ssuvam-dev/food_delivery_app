@@ -1,3 +1,5 @@
+import 'package:tryfooddeliveryapp/models/menu.dart';
+
 class Restaurant {
   String name;
   int rating;
