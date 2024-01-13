@@ -5,7 +5,12 @@ import 'package:tryfooddeliveryapp/models/restaurant.dart';
 
 class CartController extends GetxController {
   RxInt cartItems = 0.obs;
+  RxInt subTotalAmount =0.obs;
+  RxInt taxAmount=0.obs;
+  RxInt totalAmount =0.obs;
+  RxInt discountAmount =0.obs;
   RxList<dynamic> orders = [].obs;
+  RxInt tax =13.obs;
 
   void addToCart(Menu menu, Restaurant restaurant, int quantity) {
     int existingOrderIndex = orders.indexWhere(
@@ -37,5 +42,20 @@ class CartController extends GetxController {
     cartItems -= 1;
     orders.refresh();
     update();
+  }
+
+  void getSubTotal()
+  {
+
+  }
+
+  void getTaxPrice()
+  {
+
+  }
+
+  void getTotalCost()
+  {
+    
   }
 }
