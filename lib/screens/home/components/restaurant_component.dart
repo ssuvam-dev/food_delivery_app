@@ -22,12 +22,15 @@ class RestaurantComponent extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(15.0),
-              child:  Image(
-                image: AssetImage(restaurant.image),
-                height: 150,
-                width: 150,
-                fit: BoxFit.cover,
-                
+              child:  Hero(
+                tag: restaurant.image,
+                child: Image(
+                  image: AssetImage(restaurant.image),
+                  height: 150,
+                  width: 150,
+                  fit: BoxFit.cover,
+                  
+                ),
               ),
             ),
             const SizedBox(width: 15.0,),

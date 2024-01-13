@@ -20,7 +20,7 @@ final List<Restaurant> allrestaurants = [
     3,
     "0.7 km away",
     "Deuti Bajai Road",
-    "assets/images/res1.jpeg",
+    "assets/images/res1.png",
   ),
   Restaurant(
     "A-one MOMO",
@@ -41,7 +41,7 @@ final List<Restaurant> allrestaurants = [
     4,
     "3 km away",
     "Birendra-chowk,Surkhet",
-    "assets/images/res.jpeg",
+    "assets/images/res4.jpeg",
   ),
   Restaurant(
     "Sidhartha Hotel",
