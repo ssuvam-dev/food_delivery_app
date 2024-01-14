@@ -8,7 +8,11 @@ class CartSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CartController cartController = Get.find<CartController>();
-    return Container(
+    return
+    Obx((){
+
+    return 
+     Container(
       margin: const EdgeInsets.all(10.0),
       width: double.infinity,
       decoration: BoxDecoration(
@@ -65,14 +69,25 @@ class CartSummary extends StatelessWidget {
              Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                 "Tax Amount ",
-                 style: TextStyle(
-                   fontSize: 18.0,
-                   letterSpacing: 0.5,
-                 ),
+                Row(
+                  children: [
+                     const Text(
+                      "Tax Amount",
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        letterSpacing: 0.5,
+                      ),
                     ),
-
+                    Text(
+                      " (${cartController.tax.value}%)",
+                      style:  const TextStyle(
+                          fontSize: 13.0,
+                          letterSpacing: 0.1,
+                          color: Colors.grey),
+                    )
+                  ],
+                  
+                ),
                 Text(
                   "Rs. ${cartController.taxAmount.toString()}",
                   style: const TextStyle(
@@ -135,7 +150,7 @@ class CartSummary extends StatelessWidget {
                     ),
 
                 Text(
-                  "Rs. ${cartController.taxAmount.toString()}",
+                  "Rs. ${cartController.totalAmount.toString()}",
                   style: const TextStyle(
                     fontSize: 18.0
                   ),
@@ -143,12 +158,13 @@ class CartSummary extends StatelessWidget {
               ],
             ),
 
-            SizedBox(height: 10.0,),
+            const SizedBox(height: 10.0,),
 
             
           ],
         ),
       ),
     );
+    });
   }
 }

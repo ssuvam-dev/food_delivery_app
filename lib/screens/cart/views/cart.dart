@@ -17,35 +17,46 @@ class Cart extends StatelessWidget {
           backgroundColor: primaryColor,
           title: const Text("Cart"),
           centerTitle: true,
-        ),
-
-        body: Obx((){
-        return SingleChildScrollView(
-          child: Column(
-            children: [
-              ListView.separated(
-                shrinkWrap: true,
-                physics:const NeverScrollableScrollPhysics(),
-                padding: const EdgeInsets.only(top: 10.0,left: 10.0),
-                itemBuilder:(context, index) {
-                return CartComponent(order: cartController.orders[index]);
-              }, separatorBuilder:(context, index) 
-              {
-                return const Divider(
-                  height: 1.0,
-                  color: Colors.grey,
-                );
-              },
+          actions: [
+            IconButton(
+              onPressed: () {
+                cartController.orders.clear();
+                cartController.cartItems.value=0;
               
-               itemCount: cartController.orders.length),
-              cartController.cartItems.value >0 ?
-               const CartSummary():const SizedBox(),
-               cartController.cartItems.value >0 ?
-               const CheckOutButton():const SizedBox(),
-            ],
-          ),
-        );
-   })
-    );
+              },
+              icon: const Icon(
+                Icons.remove_shopping_cart
+                ),
+            )
+          ],
+        ),
+        body: Obx(() {
+          return SingleChildScrollView(
+            child: Column(
+              children: [
+                ListView.separated(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    padding: const EdgeInsets.only(top: 10.0, left: 10.0),
+                    itemBuilder: (context, index) {
+                      return CartComponent(order: cartController.orders[index]);
+                    },
+                    separatorBuilder: (context, index) {
+                      return const Divider(
+                        height: 1.0,
+                        color: Colors.grey,
+                      );
+                    },
+                    itemCount: cartController.orders.length),
+                cartController.cartItems.value > 0
+                    ? const CartSummary()
+                    : const SizedBox(),
+                cartController.cartItems.value > 0
+                    ? const CheckOutButton()
+                    : const SizedBox(),
+              ],
+            ),
+          );
+        }));
   }
 }
